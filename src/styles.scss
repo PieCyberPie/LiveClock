@@ -10,6 +10,8 @@ html {
 
 .container,
 .time,
+.day,
+.page,
 .theme-switcher,
 .theme-switcher::before {
   transition: all 0.2s linear;
@@ -17,15 +19,33 @@ html {
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  margin-inline: auto;
+  width: min-content;
   height: 100dvh;
 }
 
 .time {
   font-size: 128px;
-  @include on-mobile() {
+
+  @include on-mobile {
     font-size: 80px;
+  }
+  &::selection {
+    color: inherit;
+  }
+}
+
+.day {
+  font-size: 32px;
+  align-self: flex-end;
+
+  @include on-mobile {
+    font-size: 24px;
+  }
+  &::selection {
+    color: inherit;
   }
 }
 
@@ -44,7 +64,7 @@ html {
       display: block;
       top: 50%;
       transform: translateY(-50%);
-      left: 10px; //50
+      left: 10px;
       border-radius: 100%;
       position: relative;
       height: 60px;
@@ -55,7 +75,7 @@ html {
 }
 
 .dark-theme {
-  &--time {
+  &--text {
     color: white;
   }
   &--container {
@@ -68,4 +88,8 @@ html {
       background-color: black;
     }
   }
+}
+
+.invisible {
+  opacity: 0;
 }
