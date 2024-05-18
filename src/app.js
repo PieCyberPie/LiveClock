@@ -25,10 +25,10 @@ setInterval(updateTime, 1000);
 setInterval(updateDay, 1000);
 
 themeButton.addEventListener("click", () => {
-  themeButton.classList.toggle("dark-theme--button");
-  time.classList.toggle("dark-theme--text");
-  day.classList.toggle("dark-theme--text");
-  body.classList.toggle("dark-theme--container");
+  themeButton.classList.toggle("dark-theme");
+  time.classList.toggle("dark-theme");
+  day.classList.toggle("dark-theme");
+  body.classList.toggle("dark-theme");
 });
 
 body.addEventListener("dblclick", (event) => {

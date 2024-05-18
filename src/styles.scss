@@ -6,6 +6,8 @@
 
 html {
   font-family: Roboto, sans-serif;
+  --default-backgroundColor: #fff;
+  --default-textColor: #000;
 }
 
 .container,
@@ -15,6 +17,10 @@ html {
 .theme-switcher,
 .theme-switcher::before {
   transition: all 0.2s linear;
+}
+
+.page {
+  background-color: var(--default-backgroundColor);
 }
 
 .container {
@@ -28,6 +34,7 @@ html {
 
 .time {
   font-size: 128px;
+  color: var(--default-textColor);
 
   @include on-mobile {
     font-size: 80px;
@@ -40,6 +47,7 @@ html {
 .day {
   font-size: 32px;
   align-self: flex-end;
+  color: var(--default-textColor);
 
   @include on-mobile {
     font-size: 24px;
@@ -53,12 +61,13 @@ html {
   display: flex;
   justify-content: center;
   &-switcher {
+    cursor: pointer;
     position: absolute;
     margin: 50px;
     width: 120px;
     height: 80px;
     border-radius: 40px;
-    background-color: black;
+    background-color: var(--default-textColor);
     &::before {
       content: "";
       display: block;
@@ -69,27 +78,21 @@ html {
       position: relative;
       height: 60px;
       width: 60px;
-      background-color: white;
+      background-color: var(--default-backgroundColor);
     }
   }
 }
 
 .dark-theme {
-  &--text {
-    color: white;
-  }
-  &--container {
+  --default-backgroundColor: #000;
+  --default-textColor: #fff;
+  .theme-switcher::before {
+    left: 50px;
     background-color: black;
-  }
-  &--button {
-    background-color: white;
-    &::before {
-      left: 50px;
-      background-color: black;
-    }
   }
 }
 
 .invisible {
   opacity: 0;
+  pointer-events: none;
 }
