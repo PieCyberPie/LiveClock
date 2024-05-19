@@ -16,14 +16,51 @@
     />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="styles.scss" />
+    <link rel="shortcut icon" href="./icon/favicon.svg" type="image/x-icon" />
     <script src="app.js" defer></script>
   </head>
   <body class="page dark-theme">
-    <div class="theme">
-      <div class="theme-switcher dark-theme"></div>
+    <div class="settings">
+      <div class="settings__theme-switcher dark-theme"></div>
+      <div class="settings__mode dark-theme">
+        <input
+          class="settings__mode__radio"
+          type="radio"
+          name="mode"
+          id="clock"
+          value="clock"
+          checked
+        />
+        <label class="settings__mode__label" for="clock">Clock mode</label>
+      </div>
+      <div class="settings__mode dark-theme">
+        <input
+          class="settings__mode__radio"
+          type="radio"
+          name="mode"
+          id="stopwatch"
+          value="stopwatch"
+        />
+        <label class="settings__mode__label" for="stopwatch"
+          >Stopwatch mode</label
+        >
+      </div>
+
+      <div class="settings__mode dark-theme">
+        <input
+          class="settings__mode__radio"
+          type="radio"
+          name="mode"
+          id="timer"
+          value="timer"
+        />
+        <label class="settings__mode__label" for="timer">Timer mode</label>
+      </div>
     </div>
     <div class="container">
-      <p class="time dark-theme"></p>
+      <p class="time clock dark-theme"></p>
+      <p class="time stopwatch dark-theme"></p>
+      <p class="time timer dark-theme"></p>
       <p class="day dark-theme"></p>
     </div>
     <div class="alarm-window dark-theme">

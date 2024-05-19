@@ -11,13 +11,13 @@ html {
 }
 
 .container,
-.time,
+.clock,
 .day,
 .page,
-.theme-switcher,
-.theme-switcher::before,
+.settings__theme-switcher,
+.settings__theme-switcher::before,
 .alarm-window {
-  transition: all 0.2s linear;
+  transition: all 0.4s ease-in-out;
 }
 
 .page {
@@ -58,13 +58,17 @@ html {
   }
 }
 
-.theme {
+.settings {
   display: flex;
   justify-content: center;
-  &-switcher {
+  align-items: center;
+  &__mode {
+    &__radio {
+      // display: none;
+    }
+  }
+  &__theme-switcher {
     cursor: pointer;
-    position: absolute;
-    margin: 50px;
     width: 120px;
     height: 80px;
     border-radius: 40px;
@@ -94,20 +98,22 @@ html {
   transform: translateX(-50%);
   bottom: 5%;
   padding-inline: 1em;
-  background-color: var(--default-textColor);
+  background-color: black;
   width: max-content;
   height: fit-content;
-  line-height: 2em;
-
+  line-height: 1.5em;
+  @include on-mobile {
+    font-size: 14px;
+  }
   &__text {
-    color: var(--default-backgroundColor);
+    color: var(--default-textColor);
   }
 }
 
 .dark-theme {
   --default-backgroundColor: #000;
   --default-textColor: #fff;
-  .theme-switcher::before {
+  .settings__theme-switcher::before {
     left: 50px;
     background-color: black;
   }
